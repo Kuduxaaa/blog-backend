@@ -28,4 +28,6 @@ Admin Page: `/admin`
 | ------ | ------ |
 | admin@blog.com | admin |
 
+--------------------------------------------------------------------------------------------
+
 ![Screenshot](https://raw.githubusercontent.com/Kuduxaaa/blog-backend/master/screenshot.gif)
