@@ -1,0 +1,27 @@
+{% extends "admin-layout.html" %}
+
+{% block title %} Admin &mdash; პანელი {% endblock %}
+{% block adational %}
+<script src="{{ url_for('static', filename='/ckeditor/ckeditor.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin.css') }}">
+{% endblock %}
+
+{% block body %}
+	<h1>სტატიის დამატება</h1>
+	{% if msg %}
+		<p class="alert"> {{ msg }} </p>
+	{% endif %}
+	<form action="" class="" method="POST" enctype="multipart/form-data">
+		<input type="text" name="title" value="{{ data.post_title }}" required="">
+		<input type="text" name="tags" value="{{ data.post_tags }}" required="">
+		<input type="file" name="image" required="">
+		<textarea name="content" required="">{{ data.post_content }}</textarea>
+		<input type="submit" name="submit" value="რედაქტირება">
+	</form>
+
+	<script type="text/javascript">
+		CKEDITOR.replace('content', {
+			width: '70%'
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %} Blog &mdash; {{ data['title'] }} {% endblock %}
+{% block adational %} 
+<meta name="keywords" content="{{ data['tags'] }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ckeditor/contents.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	{% if data %}
+		{{ data['content'] | safe }}
+	{% endif %}
+
+{% endblock %}

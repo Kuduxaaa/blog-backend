@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %} Blog &mdash; მთავარი გვერდი {% endblock %}
+
+{% block body %} 
+	{% if posts %}
+		{% for post in posts %}
+			<a href="/post/{{ post.post_id }}">{{ post.post_title }}</a><br>
+		{% endfor %}
+	{% else %}
+		<h1>no posts yet</h1>
+	{% endif %}
+
+
+{% endblock %}

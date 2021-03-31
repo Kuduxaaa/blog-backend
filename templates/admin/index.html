@@ -1,0 +1,66 @@
+{% extends "admin-layout.html" %}
+
+{% block title %} Admin &mdash; პანელი {% endblock %}
+{% block adational %}
+<style type="text/css">
+	table {
+		width:100%;
+	}
+
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		padding: 15px;
+		text-align: left;
+	}
+
+	#t01 tr:nth-child(even) {
+		background-color: #eee;
+	}
+
+	#t01 tr:nth-child(odd) {
+		background-color: #fff;
+	}
+
+	#t01 th {
+		background-color: black;
+		color: white;
+	}
+</style>
+{% endblock %}
+{% block body %}
+	<h1>ადმინისტრატორის გვერდი</h1>
+	<br>
+	<h2>მოგესალმებით, {{ session['username'] }}!</h2>
+
+	<a href="/admin/new">სტატიის დამატება</a>
+	<a href="/admin/logout">გასვლა</a>
+
+	{% if posts %}
+		<table id="t01">
+			<caption>პოსტები</caption>
+			<tr>
+				<th>#</th>
+				<th>დასახელება</th>
+				<th>თარიღი</th>
+				<th>მოქმედება</th>
+			</tr>
+		{% for post in posts %}
+			<tr>
+				<td>{{ post.post_id }}</td>
+				<td>{{ post.post_title }}</td>
+				<td>{{ post.posted_at }}</td>
+				<td>
+					<span><a href="/admin/edit_post/{{ post.post_id }}">რედაქტირება</a></span>
+					<span><a href="/admin/delete_post/{{ post.post_id }}">წაშლა</a></span>
+				</td>
+		{% endfor %}
+		</table>
+	{% endif %}
+{% endblock %}
+
+
+

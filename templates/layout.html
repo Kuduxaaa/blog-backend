@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ka-GE" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kuduxaaa">
+	<meta name="theme-color" content="green">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block adational %}{% endblock %}
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+	{% block body %}
+	{% endblock %}
+
+	<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
