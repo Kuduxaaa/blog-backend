@@ -22,6 +22,7 @@ flusk run
 ## Auth info
 
 Admin authentification information
+
 Admin Page: `/admin`
 
 | Email | Password |
